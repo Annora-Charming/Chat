@@ -1,0 +1,15 @@
+@font-face {
+    font-family:"Stars";
+    src: url("Fonts/Stars.ttf");
+}
+h1 {
+    font-size: 30px;
+    font-family: "Stars";
+    color: white;
+}
+body {
+    background-color: black;
+    background-image: url("Images/Starry_night.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
