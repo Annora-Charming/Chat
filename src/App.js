@@ -1,5 +1,7 @@
 const URL = 'http://localhost:3000';
-
+import React from 'react';
+import Form from './components/Form';
+import MessagesList from "./components/MessagesList";
 
 class App extends React.Component {
     constructor(){
@@ -51,3 +53,5 @@ class App extends React.Component {
         </>
     }
 }
+
+export default App;
