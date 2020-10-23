@@ -1,5 +1,7 @@
 const URL = 'http://localhost:3000';
-
+import React from 'react';
+import Form from './components/Form';
+import MessagesList from "./components/MessagesList";
 
 class App extends React.Component {
     constructor(){
@@ -11,12 +13,16 @@ class App extends React.Component {
     }
 
     postMessage(newMessage){
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', URL);
-        xhr.send(JSON.stringify({
-            nick:newMessage.nick,
-            message:newMessage.message
-        }));
+        if (nick.value === '' || message.value === '')
+            alert("It's empty! >:(");
+        else{
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', URL);
+            xhr.send(JSON.stringify({
+                nick:newMessage.nick,
+                message:newMessage.message
+            }));
+        }
     }
 
     getMessages(){
@@ -51,3 +57,5 @@ class App extends React.Component {
         </>
     }
 }
+
+export default App;
