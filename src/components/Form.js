@@ -14,6 +14,10 @@ class Form extends React.Component {
             nick:this.state.nick,
             message:this.state.message
         });
+        this.setState({
+            nick:'',
+            message:'',
+        });
     }
 
     render(){
@@ -21,21 +25,26 @@ class Form extends React.Component {
 
         return <form>
         <input
-        value= {nick}
-        type = "text"
-        onChange = {e => this.setState({nick:e.target.value})}
+            value= {nick}
+            type = "text"
+            id = "nick"
+            placeholder="Nick"
+            onChange = {e => this.setState({nick:e.target.value})}
         />
         <br/>
         <textarea
-        value = {message}
-        onChange = {e => this.setState({message: e.target.value})}
-    >
-    </textarea>
+            value = {message}
+            id = "message"
+            placeholder="Message"
+            onChange = {e => this.setState({message: e.target.value})}
+        >
+        </textarea>
         <br/>
         <input
-        type = "button"
-        value = "Send"
-        onClick = {() => this.handleSend()}
+            type = "button"
+            value = "Send"
+            id = "send_button"
+            onClick = {() => this.handleSend()}
         />
     </form>;
     }

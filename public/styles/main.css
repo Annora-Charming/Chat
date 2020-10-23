@@ -2,10 +2,53 @@
     font-family:"Stars";
     src: url("../fonts/Stars.ttf");
 }
-
+#section {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+#nick{
+    font-size: 25px;
+    font-family: "Stars", monospace;
+    color: lightyellow;
+    background-color: rgba(0,0,0,0.5);
+    border-style: none;
+    text-shadow: 0 0 2px yellow;
+    width: 300px;
+    height: 30px;
+}
+#message{
+    font-size: 25px;
+    font-family: "Stars", monospace;
+    color: lightyellow;
+    background-color: rgba(0,0,0,0.5);
+    border-style: none;
+    text-shadow: 0 0 2px yellow;
+    width: 300px;
+    height: 100px;
+}
+#send_button{
+    font-size: 25px;
+    font-family: "Stars", monospace;
+    color: lightyellow;
+    background-color: rgba(0,0,0,0.5);
+    border-style: none;
+    text-shadow: 0 0 2px yellow;
+    width: 300px;
+    height: 30px;
+}
+#messages_list{
+    font-size: 25px;
+    font-family: "Stars", monospace;
+    color: white;
+    text-shadow: 0 0 2px yellow;
+}
+::placeholder{
+    color: white;
+    opacity: 50%;
+}
 h1 {
     font-size: 30px;
-    font-family: "Stars";
+    font-family: "Stars", monospace;
     color: lightyellow;
 }
 body {
@@ -13,4 +56,5 @@ body {
     background-image: url("../images/Starry_night.gif");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }

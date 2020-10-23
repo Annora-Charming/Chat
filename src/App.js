@@ -13,12 +13,16 @@ class App extends React.Component {
     }
 
     postMessage(newMessage){
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', URL);
-        xhr.send(JSON.stringify({
-            nick:newMessage.nick,
-            message:newMessage.message
-        }));
+        if (nick.value === '' || message.value === '')
+            alert("It's empty! >:(");
+        else{
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', URL);
+            xhr.send(JSON.stringify({
+                nick:newMessage.nick,
+                message:newMessage.message
+            }));
+        }
     }
 
     getMessages(){
