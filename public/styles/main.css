@@ -2,58 +2,53 @@
     font-family:"Stars";
     src: url("../fonts/Stars.ttf");
 }
+li{
+    list-style-type: none;
+    margin-top: 10px;
+}
 #section {
-    margin-left: 50px;
+    margin-left: 80px;
     margin-top: 50px;
 }
 #nick{
-    font-size: 25px;
-    font-family: "Stars", monospace;
-    color: lightyellow;
-    background-color: rgba(0,0,0,0.5);
-    border-style: none;
-    text-shadow: 0 0 2px yellow;
-    width: 300px;
     height: 30px;
 }
 #message{
-    font-size: 25px;
-    font-family: "Stars", monospace;
-    color: lightyellow;
-    background-color: rgba(0,0,0,0.5);
-    border-style: none;
-    text-shadow: 0 0 2px yellow;
-    width: 300px;
     height: 100px;
+    margin-top: 10px;
 }
 #send_button{
+    height: 30px;
+    margin-top: 10px;
+}
+#messages_list{
+    margin-top: 10px;
+}
+#nick, #message, #send_button, #messages_list{
     font-size: 25px;
     font-family: "Stars", monospace;
     color: lightyellow;
     background-color: rgba(0,0,0,0.5);
     border-style: none;
-    text-shadow: 0 0 2px yellow;
-    width: 300px;
-    height: 30px;
-}
-#messages_list{
-    font-size: 25px;
-    font-family: "Stars", monospace;
-    color: white;
-    text-shadow: 0 0 2px yellow;
+    text-shadow: 0 0 2px #ff3c00;
+    box-shadow: 0 0 5px #ee0e38;
+    width: 450px;
 }
 ::placeholder{
-    color: white;
+    color: lightyellow;
     opacity: 50%;
 }
 h1 {
-    font-size: 30px;
+    font-size: 40px;
     font-family: "Stars", monospace;
     color: lightyellow;
+    text-shadow: 0 0 10px #ff3c00;
+    margin-left: 180px;
+
 }
 body {
     background-color: black;
-    background-image: url("../images/Starry_night.gif");
+    background-image: url("../images/Space.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
