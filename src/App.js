@@ -18,10 +18,10 @@ class App extends React.Component {
             let xhr = new XMLHttpRequest();
             xhr.open('POST', URL);
             xhr.send(
-                JSON.stringify({
-                    nick: newMessage.nick,
-                    message: newMessage.message,
-                })
+              JSON.stringify({
+                  nick: newMessage.nick,
+                  message: newMessage.message
+              })
             );
         }
     }

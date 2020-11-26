@@ -5,6 +5,10 @@
     "browser": true,
     "jest": true
   },
+  "settings": {
+    "pragma": "React",
+    "version": "detect"
+  },
   "globals": {
     "process": true,
     "Promise": true
@@ -12,7 +16,6 @@
   "plugins": ["prettier", "sonarjs"],
   "rules": {
     "prettier/prettier": ["error"],
-    "quotes": [2, "double"],
     "comma-dangle": [2, "never"],
     "react/prop-types": "off"
   }

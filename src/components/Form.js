@@ -5,18 +5,21 @@ class Form extends React.Component {
         super();
         this.state = {
             nick: '',
-            message: '',
+            message: ''
         };
     }
 
     handleSend() {
+        if (this.state.nick === '' || this.state.message === '') {
+            alert("It's empty! >:(");
+        }
         this.props.postMessage({
             nick: this.state.nick,
-            message: this.state.message,
+            message: this.state.message
         });
         this.setState({
             nick: '',
-            message: '',
+            message: ''
         });
     }
 
@@ -38,7 +41,9 @@ class Form extends React.Component {
                     id="message"
                     placeholder="Message"
                     onChange={(e) => this.setState({ message: e.target.value })}
-                ></textarea>
+                >
+
+                </textarea>
                 <br />
                 <input
                     type="button"
