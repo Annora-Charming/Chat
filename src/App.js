@@ -7,23 +7,20 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            serverMessages: [],
+            serverMessages: []
         };
         setInterval(this.getMessages.bind(this), 1000);
     }
 
     postMessage(newMessage) {
-        if (nick.value === '' || message.value === '') alert("It's empty! >:(");
-        else {
-            let xhr = new XMLHttpRequest();
-            xhr.open('POST', URL);
-            xhr.send(
-              JSON.stringify({
-                  nick: newMessage.nick,
-                  message: newMessage.message
-              })
-            );
-        }
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', URL);
+        xhr.send(
+            JSON.stringify({
+                nick: newMessage.nick,
+                message: newMessage.message
+            })
+        );
     }
 
     getMessages() {
@@ -42,7 +39,7 @@ class App extends React.Component {
     parseMessages(response) {
         const newServerMessages = JSON.parse(response);
         this.setState({
-            serverMessages: newServerMessages,
+            serverMessages: newServerMessages
         });
     }
 

@@ -41,9 +41,7 @@ class Form extends React.Component {
                     id="message"
                     placeholder="Message"
                     onChange={(e) => this.setState({ message: e.target.value })}
-                >
-
-                </textarea>
+                ></textarea>
                 <br />
                 <input
                     type="button"
