@@ -25,7 +25,7 @@ class ChatView extends React.Component {
         xhr.open('POST', URL);
         xhr.send(
             JSON.stringify({
-                nick: newMessage.nick,
+                nickname: newMessage.nickname,
                 message: newMessage.message
             })
         );

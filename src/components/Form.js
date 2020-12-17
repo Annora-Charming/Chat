@@ -4,36 +4,36 @@ class Form extends React.Component {
     constructor() {
         super();
         this.state = {
-            nick: '',
+            nickname: '',
             message: ''
         };
     }
 
     handleSend() {
-        if (this.state.nick === '' || this.state.message === '') {
+        if (this.state.nickname === '' || this.state.message === '') {
             alert("It's empty! >:(");
         }
         this.props.postMessage({
-            nick: this.state.nick,
+            nickname: this.state.nickname,
             message: this.state.message
         });
         this.setState({
-            nick: '',
+            nickname: '',
             message: ''
         });
     }
 
     render() {
-        const { nick, message } = this.state;
+        const { nickname, message } = this.state;
 
         return (
             <form>
                 <input
-                    value={nick}
+                    value={nickname}
                     type="text"
-                    id="nick"
+                    id="nickname"
                     placeholder="Nick"
-                    onChange={(e) => this.setState({ nick: e.target.value })}
+                    onChange={(e) => this.setState({ nickname: e.target.value })}
                 />
                 <br />
                 <textarea

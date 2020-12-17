@@ -5,7 +5,7 @@ export default class RegistrationView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            nick: '',
+            nickname: '',
             password: '',
             result: null,
             error: null
@@ -19,7 +19,7 @@ export default class RegistrationView extends React.Component {
         });
         apiService.user
             .create({
-                nick: this.state.nick,
+                nickname: this.state.nickname,
                 password: this.state.password
             })
             .then(() => {
@@ -42,8 +42,8 @@ export default class RegistrationView extends React.Component {
                             Nick
                             <input
                                 type="text"
-                                value={this.state.nick}
-                                onChange={(e) => this.setState({ nick: e.target.value })}
+                                value={this.state.nickname}
+                                onChange={(e) => this.setState({ nickname: e.target.value })}
                             />
                         </label>
                     </div>

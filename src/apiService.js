@@ -7,10 +7,10 @@ const axiosInstance = axios.create({
 
 export default {
     auth: {
-        login: ({ nick, password }) => axiosInstance.post('/auth', { nick, password })
+        login: ({ nickname, password }) => axiosInstance.post('/auth', { nickname, password })
     },
     user: {
-        create: ({ nick, password }) => axiosInstance.post('/user', { nick, password }),
+        create: ({ nickname, password }) => axiosInstance.post('/user', { nickname, password }),
         profile: () => axiosInstance.get('/user')
     }
 };

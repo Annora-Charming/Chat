@@ -10,7 +10,7 @@ li{
     margin-left: 80px;
     margin-top: 50px;
 }
-#nick{
+#nickname{
     height: 30px;
 }
 #message{
@@ -24,7 +24,7 @@ li{
 #messages_list{
     margin-top: 10px;
 }
-#nick, #message, #send_button, #messages_list{
+#nickname, #message, #send_button, #messages_list{
     font-size: 25px;
     font-family: "Stars", monospace;
     color: lightyellow;
