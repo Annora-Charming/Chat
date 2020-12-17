@@ -22,7 +22,7 @@ export default class ProfileView extends React.Component {
                 <h1>Profile</h1>
                 {this.state.user && (
                     <>
-                        <div>Nick:{this.state.user.nick}</div>
+                        <div>Nickname:{this.state.user.nickname}</div>
                         <div>Created:{new Date(this.state.user.createdAt).toLocaleString()}</div>
                     </>
                 )}
