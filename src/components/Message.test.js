@@ -1,10 +1,19 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import Message from './Message';
-test('Message shows nick and message', () => {
-    const nick = 'test';
+import renderer from 'react-test-renderer';
+
+test('Message shows nickname and message', () => {
+    const nickname = 'test';
     const message = 'test';
-    const component = shallow(<Message nick={nick} message={message}/>);
-    expect(component.text()).toContain(nick);
+    const component = shallow(<Message nickname={nickname} message={message} />);
+    expect(component.text()).toContain(nickname);
     expect(component.text()).toContain(message);
+});
+
+test('Snapshot test', () => {
+    const nickname = 'test';
+    const message = 'test';
+    const component = renderer.create(<Message nickname={nickname} message={message} />);
+    expect(component.toJSON()).toMatchSnapshot();
 });

@@ -1,12 +1,14 @@
 import React from 'react';
 
-class Message extends React.Component{
+class Message extends React.Component {
     render() {
-        const {nick, message} = this.props;
-        return <li>
-            <b>{nick}:</b>
-            {message}
-        </li>;
+        const { nickname, message } = this.props;
+        return (
+            <li>
+                <b>{nickname}:</b>
+                {message}
+            </li>
+        );
     }
 }
 

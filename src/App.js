@@ -1,60 +1,25 @@
-const URL = 'http://localhost:3000';
 import React from 'react';
-import Form from './components/Form';
-import MessagesList from "./components/MessagesList";
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
+import LoginView from './views/LoginView';
+import RegistrationView from './views/RegistrationView';
+import ChatView from './views/ChatView';
+import ProfileView from './views/ProfileView';
 
 class App extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            serverMessages: []
-        };
-        setInterval(this.getMessages.bind(this), 1000)
-    }
-
-    postMessage(newMessage){
-        if (nick.value === '' || message.value === '')
-            alert("It's empty! >:(");
-        else{
-            let xhr = new XMLHttpRequest();
-            xhr.open('POST', URL);
-            xhr.send(JSON.stringify({
-                nick:newMessage.nick,
-                message:newMessage.message
-            }));
-        }
-    }
-
-    getMessages(){
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', URL);
-        xhr.send();
-        xhr.onload = () => {
-            if (xhr.status !== 200){
-                console.error('!!!ERROR!!!');
-            }
-            else {
-                this.parseMessages(xhr.response);
-            }
-        };
-    }
-
-    parseMessages(response){
-        const newServerMessages = JSON.parse(response);
-        this.setState({
-            serverMessages: newServerMessages
-        });
-    }
-
-    render(){
-        const{serverMessages} = this.state;
-        return<>
-        <h1>Chat</h1>
-        <Form postMessage = {(newMessage)=>
-            this.postMessage(newMessage)}/>
-        <MessagesList
-            messages = {serverMessages}/>
-        </>
+    render() {
+        return (
+            <>
+                <Link to="/login">Login</Link>;<Link to="/registration">Registration</Link>;
+                <Link to="/profile">Profile</Link>;<Link to="/chat">Chat</Link>
+                <Switch>
+                    <Route path="/login" component={LoginView} />
+                    <Route path="/registration" component={RegistrationView} />
+                    <Route path="/profile" component={ProfileView} />
+                    <Route path="/chat" component={ChatView} />
+                    <Redirect exact from="/" to="/login" />
+                </Switch>
+            </>
+        );
     }
 }
 
