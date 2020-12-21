@@ -1,6 +1,6 @@
 const URL = 'http://localhost:3000';
 import React from 'react';
-import Form from '../components/Form';
+import MessageForm from '../components/MessageForm';
 import MessagesList from '../components/MessagesList';
 
 class ChatView extends React.Component {
@@ -62,7 +62,7 @@ class ChatView extends React.Component {
         return (
             <>
                 <h1>Chat</h1>
-                <Form postMessage={(newMessage) => this.postMessage(newMessage)} />
+                <MessageForm postMessage={(newMessage) => this.postMessage(newMessage)} />
                 <MessagesList messages={serverMessages} />
             </>
         );
