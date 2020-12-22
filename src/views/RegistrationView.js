@@ -33,15 +33,15 @@ export default class RegistrationView extends React.Component {
                     validate={(values) => {
                         const errors = {};
                         if (!values.nickname) {
-                            errors.nickname = 'Input nickname';
+                            errors.nickname = 'Enter nickname';
                         }
                         if (!values.password) {
-                            errors.password = 'Input password';
+                            errors.password = 'Enter password';
                         }
-                        if (!values.password.length < 7) {
+                        if (values.password.length < 7) {
                             errors.password = 'Password length should be more then 6 characters';
                         }
-                        return error;
+                        return errors;
                     }}
                     onSubmit={(values) => {
                         this.handleSubmit(values);
@@ -70,7 +70,7 @@ export default class RegistrationView extends React.Component {
                             <div>
                                 <label>
                                     Password:
-                                    <inpit
+                                    <input
                                         type="password"
                                         name="password"
                                         value={values.password}
