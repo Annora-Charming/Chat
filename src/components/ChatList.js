@@ -8,9 +8,11 @@ class ChatList extends React.Component {
             <ul>
                 {this.props.list.map((chat) => (
                     <Chat
-                        id={chat.id}
-                        title={chat.title}
-                        clickHandle={this.props.clickHandle}
+                        userId={this.props.userId}
+                        chat={chat}
+                        goHandler={this.props.goHandler}
+                        joinHandler={this.props.joinHandler}
+                        deleteHandler={this.props.deleteHandler}
                         key={chat.id}
                     />
                 ))}
@@ -20,13 +22,17 @@ class ChatList extends React.Component {
 }
 
 ChatList.propTypes = {
+    userId: PropTypes.string.isRequired,
     list: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
-            title: PropTypes.string
+            title: PropTypes.string,
+            participants: PropTypes.arrayOf(PropTypes.string)
         })
     ),
-    clickHandle: PropTypes.func
+    goHandler: PropTypes.func,
+    joinHandler: PropTypes.func,
+    deleteHandler: PropTypes.func
 };
 
 export default ChatList;

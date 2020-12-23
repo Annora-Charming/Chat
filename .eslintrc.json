@@ -17,7 +17,12 @@
   },
   "plugins": ["prettier", "sonarjs"],
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "comma-dangle": [2, "never"],
     "react/prop-types": "off"
   }

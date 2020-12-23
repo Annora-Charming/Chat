@@ -35,8 +35,20 @@ export default class ProfileView extends React.Component {
             .then((chats) => this.setState({ chats }));
     }
 
-    handleChatClick(id) {
+    goHandler(id) {
         this.props.history.push(`/chat/${id}`);
+    }
+
+    joinHandler(id) {
+        if (!confirm('Are you sure?')) return;
+
+        apiService.chat.join(id).then(() => this.getChatList());
+    }
+
+    deleteHandler(id) {
+        if (!confirm('Do you really want to delete it?')) return;
+
+        apiService.chat.delete(id).then(() => this.getChatList());
     }
 
     handleChatSearch({ title }) {
@@ -44,12 +56,6 @@ export default class ProfileView extends React.Component {
             .search(title)
             .then((response) => response.data)
             .then((foundChats) => this.setState({ foundChats }));
-    }
-
-    handleFoundChatClick(id) {
-        if (!confirm('Are you sure?')) return;
-
-        apiService.chat.join(id).then(() => this.getChatList());
     }
 
     render() {
@@ -63,12 +69,21 @@ export default class ProfileView extends React.Component {
                     </>
                 )}
                 <h2>My chats</h2>
-                <ChatList list={this.state.chats} clickHandle={(id) => this.handleChatClick(id)} />
+                <ChatList
+                    userId={this.state.user?.id}
+                    list={this.state.chats}
+                    goHandler={(id) => this.goHandler(id)}
+                    joinHandler={(id) => this.joinHandler(id)}
+                    deleteHandler={(id) => this.deleteHandler(id)}
+                />
                 <ChatForm handleSubmit={(data) => this.handleChatCreate(data)} />
                 <SearchChatForm handleSubmit={(data) => this.handleChatSearch(data)} />
                 <ChatList
+                    userId={this.state.user?.id}
                     list={this.state.foundChats}
-                    clickHandle={(id) => this.handleChatClick(id)}
+                    goHandler={(id) => this.goHandler(id)}
+                    joinHandler={(id) => this.joinHandler(id)}
+                    deleteHandler={(id) => this.deleteHandler(id)}
                 />
             </>
         );
