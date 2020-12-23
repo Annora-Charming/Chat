@@ -7,15 +7,14 @@ class MessagesList extends React.Component {
         return (
             <div id="messages_list">
                 <ul>
-                    {messages.map((message, index) => (
+                    {messages.map((message) => (
                         <Message
+                            content={message.content}
                             nickname={message.nickname}
-                            message={message.message}
-                            key={index}
+                            key={message.id}
                         />
                     ))}
                 </ul>
-                ;
             </div>
         );
     }

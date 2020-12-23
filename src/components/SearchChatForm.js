@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class ChatForm extends React.Component {
+class SearchChatForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,6 +25,7 @@ class ChatForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
         if (this.validate()) {
             this.props.handleSubmit({ title: this.state.title });
             this.setState({ title: '' });
@@ -33,29 +34,29 @@ class ChatForm extends React.Component {
 
     render() {
         const { title, error } = this.state;
+
         return (
             <>
-                <h4>Creating/Editing chat</h4>
+                <h4>Chat search</h4>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
                     <div>{error && <span style={{ color: 'red' }}>{error}</span>}</div>
                     <div>
                         <label>
-                            Chat name:
                             <input
                                 value={title}
                                 onChange={(event) => this.setState({ title: event.target.value })}
                             />
                         </label>
                     </div>
-                    <button type="submit">Save</button>
+                    <button type="submit">Search</button>
                 </form>
             </>
         );
     }
 }
 
-ChatForm.propTypes = {
+SearchChatForm.propTypes = {
     handleSubmit: PropTypes.func.isRequired
 };
 
-export default ChatForm;
+export default SearchChatForm;

@@ -2,11 +2,11 @@ import React from 'react';
 
 class Message extends React.Component {
     render() {
-        const { nickname, message } = this.props;
+        const { nickname, content } = this.props;
         return (
             <li>
                 <b>{nickname}:</b>
-                {message}
+                {content}
             </li>
         );
     }

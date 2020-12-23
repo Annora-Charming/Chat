@@ -1,54 +1,38 @@
 import React from 'react';
 
 class MessageForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            nickname: '',
-            message: ''
+            content: ''
         };
     }
 
-    handleSend() {
-        if (this.state.nickname === '' || this.state.message === '') {
-            alert("It's empty! >:(");
-        }
+    handleSend(event) {
+        event.preventDefault();
         this.props.postMessage({
-            nickname: this.state.nickname,
-            message: this.state.message
+            content: this.state.content
         });
         this.setState({
-            nickname: '',
-            message: ''
+            content: ''
         });
     }
 
     render() {
-        const { nickname, message } = this.state;
+        const { content } = this.state;
 
         return (
-            <form>
+            <form onSubmit={(event) => this.handleSend(event)}>
                 <input
-                    value={nickname}
+                    value={content}
                     type="text"
-                    id="nickname"
-                    placeholder="Nick"
-                    onChange={(e) => this.setState({ nickname: e.target.value })}
+                    id="content"
+                    onChange={(e) => this.setState({ content: e.target.value })}
                 />
                 <br />
-                <textarea
-                    value={message}
-                    id="message"
-                    placeholder="Message"
-                    onChange={(e) => this.setState({ message: e.target.value })}
-                ></textarea>
-                <br />
-                <input
-                    type="button"
-                    value="Send"
-                    id="send_button"
-                    onClick={() => this.handleSend()}
-                />
+                <button type="submit" id="send_button">
+                    Send
+                </button>
             </form>
         );
     }

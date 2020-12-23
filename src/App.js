@@ -10,12 +10,12 @@ class App extends React.Component {
         return (
             <>
                 <Link to="/login">Login</Link>;<Link to="/registration">Registration</Link>;
-                <Link to="/profile">Profile</Link>;<Link to="/chat">Chat</Link>
+                <Link to="/profile">Profile</Link>
                 <Switch>
                     <Route path="/login" component={LoginView} />
                     <Route path="/registration" component={RegistrationView} />
                     <Route path="/profile" component={ProfileView} />
-                    <Route path="/chat" component={ChatView} />
+                    <Route path="/chat/:id" component={ChatView} />
                     <Redirect exact from="/" to="/login" />
                 </Switch>
             </>
