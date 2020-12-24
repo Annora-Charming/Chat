@@ -27,11 +27,11 @@ export default class RegistrationView extends React.Component {
             <div className="registration-view">
                 <h1>Registration</h1>
                 {error && (
-                    <div className="Error">
+                    <div className="error">
                         <span style={{ color: 'red' }}>{error}</span>
                     </div>
                 )}
-                {result && <div className="Result">{result}</div>}
+                {result && <div className="result">{result}</div>}
                 <Formik
                     initialValues={{ nickname: '', password: '' }}
                     validate={(values) => {

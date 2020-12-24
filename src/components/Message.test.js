@@ -5,15 +5,15 @@ import renderer from 'react-test-renderer';
 
 test('Message shows nickname and message', () => {
     const nickname = 'test';
-    const message = 'test';
-    const component = shallow(<Message nickname={nickname} message={message} />);
+    const content = 'test';
+    const component = shallow(<Message nickname={nickname} content={content} />);
     expect(component.text()).toContain(nickname);
-    expect(component.text()).toContain(message);
+    expect(component.text()).toContain(content);
 });
 
 test('Snapshot test', () => {
     const nickname = 'test';
-    const message = 'test';
-    const component = renderer.create(<Message nickname={nickname} message={message} />);
+    const content = 'test';
+    const component = renderer.create(<Message nickname={nickname} content={content} />);
     expect(component.toJSON()).toMatchSnapshot();
 });
