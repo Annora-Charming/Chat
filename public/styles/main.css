@@ -10,29 +10,26 @@ li{
     margin-left: 80px;
     margin-top: 50px;
 }
-#content{
-    height: 30px;
+#content, #send_button{
+    height: 50px;
 }
 #message{
     height: 100px;
     margin-top: 10px;
 }
-#send_button{
-    height: 30px;
+#messages_list, #send_button{
     margin-top: 10px;
 }
-#messages_list{
-    margin-top: 10px;
-}
-#content, #message, #send_button, #messages_list, #Registration{
+#content, #message, #send_button, #messages_list{
     font-size: 25px;
     font-family: "Stars", monospace;
     color: antiquewhite;
-    background-color: rgba(255, 102, 0, 0.8);
+    background-color: rgba(28, 9, 0, 0.5);
     border-style: none;
     text-shadow: 0 0 2px #ff3c00;
     box-shadow: 0 0 5px #ee0e38;
     width: 450px;
+    padding: 10px;
 }
 ::placeholder{
     color: lightyellow;
