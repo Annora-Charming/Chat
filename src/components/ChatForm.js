@@ -36,13 +36,14 @@ class ChatForm extends React.Component {
         return (
             <>
                 <h4>Creating/Editing chat</h4>
-                <form onSubmit={(e) => this.handleSubmit(e)}>
+                <form className="chat-form" onSubmit={(e) => this.handleSubmit(e)}>
                     <div>{error && <span style={{ color: 'red' }}>{error}</span>}</div>
                     <div>
                         <label>
                             Chat name:
                             <input
                                 value={title}
+                                name="chat-title"
                                 onChange={(event) => this.setState({ title: event.target.value })}
                             />
                         </label>

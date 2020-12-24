@@ -22,11 +22,12 @@ class MessageForm extends React.Component {
         const { content } = this.state;
 
         return (
-            <form onSubmit={(event) => this.handleSend(event)}>
+            <form className="message-form" onSubmit={(event) => this.handleSend(event)}>
                 <input
                     value={content}
                     type="text"
                     id="content"
+                    name="content"
                     onChange={(e) => this.setState({ content: e.target.value })}
                 />
                 <br />

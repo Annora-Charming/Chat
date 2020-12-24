@@ -24,11 +24,11 @@ li{
 #messages_list{
     margin-top: 10px;
 }
-#content, #message, #send_button, #messages_list{
+#content, #message, #send_button, #messages_list, #Registration{
     font-size: 25px;
     font-family: "Stars", monospace;
-    color: lightyellow;
-    background-color: rgba(0,0,0,0.5);
+    color: antiquewhite;
+    background-color: rgba(255, 102, 0, 0.8);
     border-style: none;
     text-shadow: 0 0 2px #ff3c00;
     box-shadow: 0 0 5px #ee0e38;
@@ -41,13 +41,13 @@ li{
 h1 {
     font-size: 40px;
     font-family: "Stars", monospace;
-    color: lightyellow;
+    color: antiquewhite;
     text-shadow: 0 0 10px #ff3c00;
     margin-left: 180px;
 
 }
 body {
-    background-color: black;
+    background-color: antiquewhite;
     background-image: url("../images/BG.jpg");
     background-size: cover;
     background-repeat: no-repeat;

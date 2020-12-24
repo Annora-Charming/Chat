@@ -24,10 +24,14 @@ export default class LoginView extends React.Component {
     render() {
         const { error, result } = this.state;
         return (
-            <>
+            <div className="login-view">
                 <h1>Login</h1>
-                <div>{error && <span style={{ color: 'red' }}>{error}</span>}</div>
-                {result}
+                {error && (
+                    <div className="Error">
+                        <span style={{ color: 'red' }}>{error}</span>
+                    </div>
+                )}
+                {result && <div className="Result">{result}</div>}
                 <Formik
                     initialValues={{ nickname: '', password: '' }}
                     validate={(values) => {
@@ -83,7 +87,7 @@ export default class LoginView extends React.Component {
                         </form>
                     )}
                 </Formik>
-            </>
+            </div>
         );
     }
 }
