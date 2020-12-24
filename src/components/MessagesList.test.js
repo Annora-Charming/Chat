@@ -4,28 +4,38 @@ import MessagesList from './MessagesList';
 import renderer from 'react-test-renderer';
 
 test('Messages list', () => {
-    const messages = [{ nickname: 'TEST', message: 'TEST' }];
+    const messages = [
+        { nickname: 'TEST', content: 'TEST', id: '1' },
+        { nickname: 'test', content: 'test', id: '2' }
+    ];
     const component = shallow(<MessagesList messages={messages} />);
-    expect(component.find('Message')).toHaveLength(1);
+    expect(component.find('Message')).toHaveLength(2);
 });
 
 test('inline snapshot test', () => {
-    const messages = [{ nickname: 'TEST', message: 'TEST' }];
+    const messages = [
+        { nickname: 'TEST', content: 'TEST', id: '1' },
+        { nickname: 'test', content: 'test', id: '2' }
+    ];
     const component = renderer.create(<MessagesList messages={messages} />).toJSON();
     expect(component).toMatchInlineSnapshot(`
-<div
-      id="messages_list"
-    >
-      <ul>
-        <li>
-          <b>
+        <ul
+          className="message-list"
+        >
+          <li>
+            <b>
+              TEST
+              :
+            </b>
             TEST
-            :
-          </b>
-          TEST
-        </li>
-      </ul>
-      ;
-    </div>
-  `);
+          </li>
+          <li>
+            <b>
+              test
+              :
+            </b>
+            test
+          </li>
+        </ul>
+    `);
 });
